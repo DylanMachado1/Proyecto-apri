@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APRI Uruguay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo" id="logo-link">
+            <img src="apri.png" alt="logo de la compañia">
+            <h2 class="nombre-empresa">APRI</h2>
+        </a>
+        <nav>
+            <a href="#" class="nav-link" data-target="inicio">Inicio</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link" data-target="talleres">Talleres</a>
+                <div class="dropdown-content">
+                    <a href="#" class="taller-link" data-taller="manualidades">Manualidades</a>
+                    <a href="#" class="taller-link" data-taller="boccia">Boccia</a>
+                    <a href="#" class="taller-link" data-taller="carpinteria">Carpintería</a>
+                    <a href="#" class="taller-link" data-taller="jardineria">Jardinería</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-link" data-target="alquiler">Alquiler</a>
+                <div class="dropdown-content">
+                    <a href="#" class="alquiler-link" data-alquiler="bastones">Bastones</a>
+                    <a href="#" class="alquiler-link" data-alquiler="sillas-ruedas">Sillas de Ruedas</a>
+                    <a href="#" class="alquiler-link" data-alquiler="andadores">Andadores</a>
+                    <a href="#" class="alquiler-link" data-alquiler="bastones-4p">Bastones 4P</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-link" data-target="basketball">Basketball</a>
+                <div class="dropdown-content">
+                    <a href="#" class="basketball-link" data-basketball="alquiler-cancha">Alquiler de Cancha</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-link" data-target="contacto">Contacto</a>
+                <div class="dropdown-content">
+                    <a href="https://wa.me/59896116676" target="_blank">WhatsApp</a>
+                    <a href="mailto:dylanvpi1899@gmail.com">Gmail</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="content-section">
+            <h2>Sobre APRI Uruguay</h2>
+            <p>APRI (Asociación Pro Recuperación del Inválido) es una institución sin fines de lucro dedicada a la rehabilitación integral de personas con discapacidad, con el objetivo de integrarlas a la sociedad.</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="apri boccia.jpg" alt="Imagen de taller de boccia">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="APRI BSR.jpg" alt="Imagen de basketball">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="apri bsr 2.jpg" alt="Imagen de basketball">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="apri jardineria.jpg" alt="Imagen de taller de jardinería">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="arpi frente.jpg" alt="imagen del frente de apri">
+                    </div>
+                </div>
+                <button class="carousel-prev">&#8249;</button>
+                <button class="carousel-next">&#8250;</button>
+            </div>
+        </section>
+        <section id="donaciones" class="content-section">
+            <h2>Haz una Donación</h2>
+            <p>Tu donación será destinada a los viajes de competiciones de Boccia y Basketball. ¡Gracias por tu apoyo!</p>
+            <div class="opciones-donacion">
+                <button class="donacion-btn" data-amount="80">$80</button>
+                <button class="donacion-btn" data-amount="160">$160</button>
+                <button class="donacion-btn" data-amount="240">$240</button>
+                <button class="donacion-btn" data-amount="320">$320</button>
+                <button class="donacion-btn" data-amount="500">$500</button>
+            </div>
+            <div class="otro-monto">
+                <label for="otro-monto-input">Otro monto:</label>
+                <input type="number" id="otro-monto-input" placeholder="Ingresa tu monto" min="1">
+                <button id="otro-monto-btn" class="donacion-btn">Donar</button>
+            </div>
+            <div id="mensaje-donacion" class="mensaje-donacion hidden">¡Gracias por tu donación de $<span id="donacion-amount"></span>!</div>
+        </section>
+        <section id="detalle-taller" class="content-section hidden">
+            <h3 id="taller-titulo"></h3>
+            <p id="taller-descripcion"></p>
+            <form id="form-inscripcion" action="/send-notification" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <button type="submit">Inscribirse</button>
+            </form>
+        </section>
+        <section id="detalle-alquiler" class="content-section hidden">
+            <h3 id="alquiler-titulo"></h3>
+            <p id="alquiler-descripcion"></p>
+            <form id="form-alquiler" action="/send-notification" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <button type="submit">Alquilar</button>
+            </form>
+        </section>
+        <section id="detalle-basketball" class="content-section hidden">
+            <h3 id="basketball-titulo"></h3>
+            <p id="basketball-descripcion"></p>
+            <form id="form-basketball" action="/send-notification" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+        <section id="contacto" class="content-section hidden">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
